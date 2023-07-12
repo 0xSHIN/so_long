@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 20:26:47 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 03:01:16 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/12 23:16:02 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	exit_and_free(t_data *game)
 		mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
-	free(game);
 	exit(EXIT_SUCCESS);
 }
 
