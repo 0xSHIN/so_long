@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:37:45 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 05:03:54 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/12 05:24:32 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_printf(char *str, ...)
 {
 	va_list			arguments;
-	size_t	i;
+	size_t			i;
 	size_t			len;
-	int		count;
-	
+	int				count;
+
 	i = 0;
 	count = 0;
 	if (!str)
