@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 03:30:49 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 03:34:05 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/13 20:09:16 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ void	update_counts(t_data *game, int y, int x, int *player_count)
 	else if (game->map[y][x] == 'E')
 		game->total_exits++;
 	else if (game->map[y][x] == 'P')
+		(*player_count)++;
+	else if (game->map[y][x] == 'L')
+		(*player_count)++;
+	else if (game->map[y][x] == 'Y')
+		(*player_count)++;
+	else if (game->map[y][x] == 'I')
 		(*player_count)++;
 }
 

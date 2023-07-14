@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:44:11 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 03:33:52 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/13 20:07:20 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ void	check_collectibles(t_data *game, int **visited)
 		x = 0;
 		while (x < game->width)
 		{
-			if (game->map[y][x] == 'C' && !visited[y][x])
+			if ((game->map[y][x] == 'C'
+				|| game->map[y][x] == 'E') && !visited[y][x])
 			{
 				free_visited(visited, game);
-				handle_error(game, "Not all collectibles can be reached");
+				handle_error(game,
+					"Not all collectibles or exit can be reached");
 			}
 			x++;
 		}
@@ -81,7 +83,7 @@ void	flood_fill(int x, int y, t_data *game, int **visited)
 {
 	if (x < 0 || y < 0 || x >= game->width || y >= game->height)
 		return ;
-	if (visited[y][x] || game->map[y][x] == '1' || game->map[y][x] == 'E')
+	if (visited[y][x] || game->map[y][x] == '1')
 		return ;
 	visited[y][x] = 1;
 	flood_fill(x - 1, y, game, visited);

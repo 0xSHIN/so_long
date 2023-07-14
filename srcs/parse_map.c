@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:56:51 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 04:23:55 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/13 01:11:45 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,18 @@ char	**del_null_char(t_data *game)
 {
 	char	**final_map;
 	int		i;
+	int		size;
+	int		tmp;
 
 	i = 0;
+	size = ft_strlen(game->map[i]);
 	final_map = ft_calloc((game->height + 1), sizeof(char *));
 	if (!final_map)
 		return (NULL);
 	while (game->map[i])
 	{
-		if (ft_strlen(game->map[i]) > 0)
+		tmp = ft_strlen(game->map[i]);
+		if (tmp > 0 && tmp == size)
 			final_map = allocate_final_map(game, final_map, i);
 		else
 		{

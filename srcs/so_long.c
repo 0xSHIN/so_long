@@ -6,7 +6,7 @@
 /*   By: alyildiz <alyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 04:36:10 by alyildiz          #+#    #+#             */
-/*   Updated: 2023/07/12 23:18:03 by alyildiz         ###   ########.fr       */
+/*   Updated: 2023/07/13 01:17:35 by alyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	if (argc < 2)
-		return (write(1, "Usage -> ./so_long [path/to/map.ber]", 36));
+		return (write(1, "Error\nUsage -> ./so_long [path/to/map.ber]", 41));
 	else if (argc == 2 && check_file_extension(argv[1]) == 0)
 	{
 		check_fd(argv);
@@ -59,6 +59,6 @@ int	main(int argc, char **argv)
 		start_game(&game);
 	}
 	else
-		write(1, "File extension name error", 25);
+		write(1, "Error\nFile extension name error", 31);
 	return (0);
 }
